@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8fafc;
+  --foreground: #1e293b;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #7c3aed;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a;
+    --foreground: #f1f5f9;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  background-image: radial-gradient(circle at center center, rgba(37, 99, 235, 0.05), transparent 25%);
+  min-height: 100vh;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-[family-name:var(--font-geist-sans)];
+  }
+}
+
+.w-md-editor {
+  background: #f8fafc !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.w-md-editor-toolbar {
+  border-bottom: 2px solid #e2e8f0 !important;
+  background: #f1f5f9 !important;
+  padding: 12px !important;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+}
+
+.w-md-editor-text-input {
+  padding: 20px !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+}
+
+.w-md-editor-preview {
+  padding: 20px !important;
+  box-shadow: inset 1px 0 0 #e2e8f0 !important;
+}
+
+.w-md-editor-text {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+}
+
+.w-md-editor-toolbar-divider {
+  background-color: #e2e8f0 !important;
+  margin: 0 8px !important;
+}
+
+.w-md-editor-toolbar button {
+  border-radius: 0.5rem !important;
+  margin: 0 2px !important;
+  color: #475569 !important;
+}
+
+.w-md-editor-toolbar button:hover {
+  background-color: #e2e8f0 !important;
+}
+
+.w-md-editor-toolbar button.active {
+  background-color: #e2e8f0 !important;
+  color: #3730a3 !important;
+}
+
+/* Dark mode support */
+[data-color-mode="dark"] .w-md-editor {
+  background: #1e293b !important;
+  color: #f8fafc !important;
+}
+
+[data-color-mode="dark"] .w-md-editor-toolbar {
+  background: #0f172a !important;
+  border-color: #334155 !important;
+}
+
+[data-color-mode="dark"] .w-md-editor-preview {
+  box-shadow: inset 1px 0 0 #334155 !important;
+}
